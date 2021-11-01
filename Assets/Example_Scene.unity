@@ -714,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &166746148
 Transform:
   m_ObjectHideFlags: 0
@@ -9833,7 +9833,7 @@ MonoBehaviour:
   renderParticles: 1
   renderPrefabsWithColor: 1
   folderName: AE_S2
-  inputfile: Wrist_S2_R1_B1_Actual
+  inputfile: Wrist_S2_R2_B1_Imagined
   column1: 0
   column2: 1
   column3: 2
