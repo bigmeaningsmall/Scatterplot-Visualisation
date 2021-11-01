@@ -16,6 +16,8 @@ public class PointRenderer : MonoBehaviour {
     public bool renderParticles =  true;
     public bool renderPrefabsWithColor = true;
 
+    // Folder of the data from 'Resources'
+    public string folderName;
     // Name of the input file, no extension
     public string inputfile;
 
@@ -30,7 +32,8 @@ public class PointRenderer : MonoBehaviour {
     public string zColumnName;
      
     // Scale of particlePoints within graph, WARNING: Does not scale with graph frame
-     private float plotScale = 10;
+    // [Range(0f, 100f)]
+     public float plotScale = 10;
 
     // Scale of the prefab particlePoints
     [Range(0.0f, 0.5f)]
@@ -73,8 +76,14 @@ public class PointRenderer : MonoBehaviour {
 
     void Awake()
     {
-        //Run CSV Reader
-        pointList = CSVReader.Read(inputfile);
+        if (folderName == ""){
+            //Run CSV Reader
+            pointList = CSVReader.Read(inputfile);
+        }
+        else{
+            //Run CSV Reader
+            pointList = CSVReader.Read(folderName+"/"+inputfile);
+        }
     }
 
     // Use this for initialization
@@ -278,11 +287,17 @@ public class PointRenderer : MonoBehaviour {
             float x = (Convert.ToSingle(pointList[i][xColumnName]) - xMin) / (xMax - xMin);
             float y = (Convert.ToSingle(pointList[i][yColumnName]) - yMin) / (yMax - yMin);
             float z = (Convert.ToSingle(pointList[i][zColumnName]) - zMin) / (zMax - zMin);
+            
+            // Convert object from list into float
+            // float x = Convert.ToSingle(pointList[i][xColumnName]);
+            // float y = Convert.ToSingle(pointList[i][yColumnName]);
+            // float z = Convert.ToSingle(pointList[i][zColumnName]);
 
             // Debug.Log("Position is " + x + y + z);
 
             // Set point location
 			particlePoints[i].position = new Vector3(x, y, z) * plotScale;
+            // particlePoints[i].position = new Vector3(x, y, z);
           
             //GlowColor = 
             // Set point color
