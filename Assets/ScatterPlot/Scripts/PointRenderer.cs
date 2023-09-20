@@ -10,7 +10,9 @@ using UnityEngine;
 public class PointRenderer : MonoBehaviour {
 
     //********Public Variables********
-
+    
+    public bool useLabels = true;
+    
     // Bools for editor options
     public bool renderPointPrefabs = true;
     public bool renderParticles =  true;
@@ -116,10 +118,9 @@ public class PointRenderer : MonoBehaviour {
             
         // Debug.Log(xMin + " " + yMin + " " + zMin); // Write to console
 
-        AssignLabels();
-
-
-                                
+        if (useLabels){
+            AssignLabels();
+        }
     }
     
 		
