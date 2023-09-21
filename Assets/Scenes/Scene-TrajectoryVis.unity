@@ -824,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &166746148
 Transform:
   m_ObjectHideFlags: 0
@@ -9729,14 +9729,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useLabels: 0
-  renderPointPrefabs: 0
-  renderParticles: 1
-  renderPrefabsWithColor: 0
+  renderPointPrefabs: 1
+  renderParticles: 0
+  renderPrefabsWithColor: 1
   folderName: 
-  inputfile: sb2_ss4_TG_xyz
-  column1: 0
-  column2: 1
-  column3: 2
+  inputfile: reshaped_unity_data
+  column1: 3
+  column2: 4
+  column3: 5
   xColumnName: 
   yColumnName: 
   zColumnName: 
